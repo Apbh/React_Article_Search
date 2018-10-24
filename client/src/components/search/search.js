@@ -9,9 +9,7 @@ const Search = props =>
                     <div className="panel-heading">
                         <h3 className="panel-title">
                             Search
-                            {/* <strong> */}
-                            {/* <i className="fa fa-search" aria-hidden="true"></i> Search */}
-                            {/* </strong> */}
+                        
                         </h3>
                     </div>
                     <div className="panel-body">
@@ -33,7 +31,7 @@ const Search = props =>
                     </div>
                 </div>
              </div>
-        // </div>
+         </div>
 
         <br /><br />
 
@@ -48,7 +46,7 @@ const Search = props =>
                         </h3>
                     </div>
                     <div className="panel-body">
-                        {props.renderArticles()}
+                        {props.displayArticles()}
                     </div>
                 </div>
             </div>

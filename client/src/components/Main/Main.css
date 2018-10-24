@@ -1,0 +1,14 @@
+h1.appName{
+    margin-top:-35px;
+    font-family: 'Diplomata SC', cursive;
+    text-align: center;
+    font-size:70px;
+    color:navy
+   
+}
+
+.subHeading{
+    background-color:white;
+    color:darkred;
+    text-align: center;
+}

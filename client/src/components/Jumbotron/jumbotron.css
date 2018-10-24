@@ -1,0 +1,11 @@
+.jumbotron{
+ background-image: url("https://i.ytimg.com/vi/yGEOXfRfLAo/maxresdefault.jpg");
+ height: 100%;
+ clear: "both";
+ padding-top: 120;
+ text-align: "center" ;
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size:cover;
+}
+

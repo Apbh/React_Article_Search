@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const routes = require("./routes");
+// const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -17,10 +17,24 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
 
-app.use(routes);
+//Routing
+const router = new express.Router();
+const articlesController = require("./controllers/articlecontroller");
 
-// Send every request to the React app
-// Define any API routes before this runs
+// Matches with "/api/articles"/ your components will use this to get/save articles to mongoDb
+router
+  .get("/api/articles", articlesController.findAll)
+  .post("/api/articles", articlesController.insert);
+
+router.get("/*", function(req, res) {
+    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
+router
+  .delete("/api/articles/:id", articlesController.remove);
+
+
+app.use(router);
+
 app.get('*', function (req, res) {
     res.sendFile(path.join(__dirname, './client/build/index.html'));
 });
