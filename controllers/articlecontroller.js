@@ -12,20 +12,20 @@ module.exports = {
   },
 
   insert: function(req, res) {
-    console.log("Adding saved artice to the db");
+    console.log("Adding saved article to the db");
     console.log("req.body: ", req.body);
-    Article.create(req.body).then(function(dbModel) {
-      res.json(dbModel);
-  
-    })
-    .catch(err => res.status(422).json(err));
-       
-  },
-
-  remove: function(req, res) {
-    Article.remove({_id: req.params.id })
+    Article.create(req.body)
       .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+      .catch(err => console.log(err));
+      // res.status(422).json(err));
+  
+    },
+       
+    remove: function(req, res) {
+      Article.remove({_id: req.params.id })
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+    }
   }
 
-}
+

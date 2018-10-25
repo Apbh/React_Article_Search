@@ -98,9 +98,9 @@ class Main extends Component {
 
     handleSavedButton = id => {
         const matchArticleById = this.state.articles.find((article) => article._id === id);
-        const newEntry = { title: matchArticleById.headline.main, data: matchArticleById.pub_date, url: matchArticleById.web_url };
+        const newEntry = { _id: matchArticleById._id, title: matchArticleById.headline.main, url: matchArticleById.web_url, date: matchArticleById.pub_date };
         API.saveArticles(newEntry)
-            .then(this.showArticles());
+            .then(res => this.showArticles());
 
     };
 
