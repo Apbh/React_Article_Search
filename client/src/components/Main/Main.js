@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Jumbotron from "../Jumbotron/jumbotron";
 import API from "../../utils/API";
 import { Col, Row, Container } from "../Grid/index";
-import Search from "../search/Search";
+import Search from "../search/search";
 import Results from "../results/results";
 import Saved from "../saved/saved";
 import "./Main.css"
@@ -47,6 +47,7 @@ class Main extends Component {
     //to display saved articles in a div
     displaySavedArticles = () => {
         return this.state.saved.map(save => (
+
             <Saved
                 _id={save._id}
                 key={save._id}
@@ -56,6 +57,7 @@ class Main extends Component {
                 deleteArticle={this.deleteArticle}
                 showArticles={this.showArticles}
             />
+
         ))
     }
 
@@ -90,7 +92,7 @@ class Main extends Component {
         event.preventDefault();
         API.fromNYT(this.state.topic, this.state.startYear, this.state.endYear)
             .then((res) => {
-                this.setState({ articles: res.data.response.docs});
+                this.setState({ articles: res.data.response.docs });
                 console.log("this.state.articles: ", this.state.articles);
             })
 
@@ -107,6 +109,7 @@ class Main extends Component {
     render() {
         return (
             <Container fluid>
+
                 <Jumbotron>
                     <h1 className="appName">New York Times Search</h1>
                     <h2 className="subHeading">Your one-stop search medium for all articles</h2>
@@ -123,7 +126,7 @@ class Main extends Component {
 
                 <Container>
                     <Row>
-                        <Col size="sm-12">
+                        <Col size="lg-12">
                             <div className="panel panel-primary">
                                 <div className="panel-heading">
                                     <h3 className="panel-title">
@@ -133,7 +136,9 @@ class Main extends Component {
                                 </div>
                                 <div className="panel-body">
                                     <ul className="list-group">
+
                                         {this.displaySavedArticles()}
+
                                     </ul>
                                 </div>
                             </div>
@@ -144,6 +149,7 @@ class Main extends Component {
 
 
                 </Container>
+
             </Container>
 
         )
