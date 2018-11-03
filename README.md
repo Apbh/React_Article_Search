@@ -12,6 +12,16 @@ Follow the steps below to get a copy of this functioning app in your local machi
   
 
 ## At a Glance
+* Search for any keywords in the topic box and enter the start and end date for search:
+ ![Screenshot](images/search.png "search")
+ 
+* Save an article from the results to refer to it later. Click on the delete button to remove article from the 'saved' section.
+ ![Screenshot](images/saveAndDelete.png "SaveOrDelete")
+ 
+ 
+ 
+ 
+
 
  
  
